@@ -17,10 +17,10 @@ To use SimpleTranslateTool you must either, inherit from the SimpleTranslateTool
 
 We use a single resource file to provide a table of translations
 
-| name                         | value  | comment  |
-|------------------------------|--------|----------|
-| en.form1.control1.property1  | text1  | Approved |
-| en.form1.control1.property2  | text2  | New      |
+| name                            | value               | comment  |
+|---------------------------------|---------------------|----------|
+| en__form1__control1__property1  | text                | Approved |
+| en__form1__control1__property2  | {"Item1", "Item2"}  | New      |
 
 When sorted alphabetically, translations are grouped by language (e.g. `en`), form name, control name and then property name.
 

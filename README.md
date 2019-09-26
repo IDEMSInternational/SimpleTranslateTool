@@ -3,10 +3,10 @@ SimpleTranslateTool aims to provide a simple alternative way of managing multipl
 
 The tool is currently focused on providing an alternative method for translating Windows Forms (WinForms) applications.  
 
-.NET has built in capabilities for language translation. We intentionally take a different approach at each step to provide an alternative solution for cases where the 
+.NET has built in capabilities for language translation. We intentionally take a different approach in order to provide an alternative solution for cases where the standard capabilities are not appropraite. For example, in a WinForms application the developer has to set the `Localizable` property to true on every form manually. If if this step is automated, the actually process of extract values for translation into a `resx` resource file is a blackbox process that occurs during the project build that can not be customised or called externally.
 
 Main features of SimpleTranslateTool:
-- Dynamically translate the application at run time, allowing users to switch among, and compare, languages real time.
+- Dynamically translate the application at run time, allowing users to switch among available languages in real time.
 - Work with CSV and tabular formats in lieu of XML
 
 Note: SimpleTranslateTool makes use of a single `resx` resource file that is built into the project. Alternatives have been considered (such as using SQLite to lookup the required translations) but these would add additional complexity and dependencies.
@@ -17,10 +17,13 @@ To use SimpleTranslateTool you must either, inherit from the SimpleTranslateTool
 
 We use a single resource file to provide a table of translations
 
-| name                            | value               | comment  |
-|---------------------------------|---------------------|----------|
-| en__form1__control1__property1  | text                | Approved |
-| en__form1__control1__property2  | {"Item1", "Item2"}  | New      |
+| name                            | value                          | comment  |
+|---------------------------------|--------------------------------|----------|
+| en__form1__control1__property1  | `\|<<`  `>>\|`                     | Exclude  |
+| en__form1__control1__property2  | {"Item1", "Item2"}             |          |
+| en__form2__control5__property1  | en__form1__control1__property2 | Link     |
+| fr__form1__control1__property2  | {"Article1", "Article2"}       |          |
+| fr__form2__control5__property1  | fr__form1__control1__property2 | Link     |
 
 When sorted alphabetically, translations are grouped by language (e.g. `en`), form name, control name and then property name.
 

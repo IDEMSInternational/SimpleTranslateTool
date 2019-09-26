@@ -30,7 +30,15 @@ When sorted alphabetically, translations are grouped by language (e.g. `en`), fo
 Note: Currently the default language is assumed to be English. The default language strings are hardcoded into the application at design
 time and can be found in `*.Designer.vb` files. We also include every English string in the translation table for two reasons:
 
-a) This allows us to detect when the text in the Designer files has changed, this allows us to mark translations in other languages as needing `Update`.
+a) This allows us to detect when the text in the Designer files has changed, this allows us to mark translations in other languages as needing `Update`. The translated string cannot really be cleared or set to the default English, therefore the old translation will remain. The software shouldn't be released whilst updates are required.
 
 b) Storing the English version allows to to change back to English very easily at runtime if the user had a different display language selected.
 
+Flag currently being considered for the `comment` column:
+
+| Flag | Description |
+|------|-------------|
+| A    | Approved    |
+| E    | Excluded    |
+| U    | Update      |
+| N    | New         |

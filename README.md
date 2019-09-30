@@ -3,15 +3,16 @@ SimpleTranslateTool aims to provide a simple alternative way of managing multipl
 
 The tool is currently focused on providing an alternative method for translating Windows Forms (WinForms) applications.  
 
-.NET has built in capabilities for language translation. We intentionally take a different approach in order to provide an alternative solution for cases where the standard capabilities are not appropraite. For example, in a WinForms application the developer has to set the `Localizable` property to true on every form manually. If if this step is automated, the actually process of extract values for translation into a `resx` resource file is a blackbox process that occurs during the project build that can not be customised or called externally.
+.NET has built-in capabilities for language translation. We intentionally take a different approach in order to provide an alternative solution for cases where the standard capabilities are not appropraite. For example, in a WinForms application the developer has to manually set the `Localizable` property to true on every form. If this step is automated, the process of extracting values for translation into a `resx` resource file is a blackbox process that occurs during the project build and this cannot be customised or called externally.
 
-Main features of SimpleTranslateTool:
+Additional features of SimpleTranslateTool:
 - Dynamically translate the application at run time, allowing users to switch among available languages in real time.
 - Work with CSV and tabular formats in lieu of XML
 
-Note: SimpleTranslateTool makes use of a single `resx` resource file that is built into the project. Alternatives have been considered (such as using SQLite to lookup the required translations) but these would add additional complexity and dependencies.
+Note: Internally, SimpleTranslateTool makes use of a single `resx` resource file that is built into the project. Alternatives have been considered (such as using SQLite to lookup the required translations) but these would add additional complexity and dependencies.
 
 To use SimpleTranslateTool you must either, inherit from the SimpleTranslateTool base form, or include to SimpleTranslateTool on Load of each form.
+
 
 ## The translation table
 
